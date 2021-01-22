@@ -51,16 +51,16 @@ if (isProduction) {
       if (!versionObj.build) {
         versionObj.build = "";
       }
-      const dataFormat = require("@zibu/common").dataFormat;
-      let build = dataFormat.datetimeFormat(new Date().getTime(), "MMdd");
-      let serial = "1";
-      // 是否是相同日期，如果是相同日期，序号加1
-      if (versionObj.build.startsWith(build)) {
-        serial = Number(versionObj.build.replace(build, ""));
-        serial = (++serial).toString();
-      }
-      versionObj.build = build + serial;
-      fs.writeFileSync(filePath, JSON.stringify(versionObj, null, 2));
+      // const dataFormat = require("@zibu/common").dataFormat;
+      // let build = dataFormat.datetimeFormat(new Date().getTime(), "MMdd");
+      // let serial = "1";
+      // // 是否是相同日期，如果是相同日期，序号加1
+      // if (versionObj.build.startsWith(build)) {
+      //   serial = Number(versionObj.build.replace(build, ""));
+      //   serial = (++serial).toString();
+      // }
+      // versionObj.build = build + serial;
+      // fs.writeFileSync(filePath, JSON.stringify(versionObj, null, 2));
     });
   });
 }
